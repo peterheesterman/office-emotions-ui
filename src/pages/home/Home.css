@@ -1,0 +1,10 @@
+
+.Home,
+.HomeView {
+    height: 100%;
+}
+
+.HomeView-content {
+    min-height: calc(100vh - 170px);
+    padding: 2em;
+}

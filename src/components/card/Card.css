@@ -1,0 +1,36 @@
+
+.Card {
+    background-color: white;
+    min-height: 6em;
+    padding: 2.125em;
+    text-align: left;
+    box-shadow: 0 0 5px rgba(0,0,0,.1);
+    min-width: 150px;
+}
+
+.Card-title {
+    color: #0C98CF;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1em;
+}
+
+.Card-description {
+    min-height: calc(30vh);
+    line-height: 1.5em;
+    color: #6C6E70;
+}
+
+.Card .Card-link {
+    color: #F74D7B;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.Card .Card-link:hover {
+    text-decoration: underline;
+}
+
+.Card + .Card {
+    margin-top: 2em;
+}

@@ -1,0 +1,10 @@
+
+.Debug,
+.DebugView {
+    height: 100%;
+}
+
+.DebugView-content {
+    min-height: calc(100vh - 170px);
+    padding: 2em;
+}

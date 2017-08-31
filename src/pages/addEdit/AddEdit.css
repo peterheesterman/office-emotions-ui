@@ -1,0 +1,10 @@
+
+.AddEdit,
+.AddEditView {
+    height: 100%;
+}
+
+.AddEditView-content {
+    min-height: calc(100vh - 170px);
+    padding: 2em;
+}

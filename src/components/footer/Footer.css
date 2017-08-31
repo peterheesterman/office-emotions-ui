@@ -1,0 +1,11 @@
+.Footer {
+  background-color: #26262a;
+  height: 400px;
+  padding: 1em;
+  font-size: 1.7rem;
+  min-width: 230px;
+}
+
+.Footer a:active {
+  color: #0AA0D9;
+}
