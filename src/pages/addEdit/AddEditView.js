@@ -15,11 +15,23 @@ export const AddEditView = (props) => (
             <div>
                 <h1>Office</h1>
                 <h1>Emotions</h1>
-                {props.items.map(item => 
-                    <div key={item} style={{"border":"1px solid blue"}} onClick={()=>{test(item)}}>
-                        <h1 key={item}>{item}</h1>
-                    </div>
-                )}
+
+                {props.commands.map(function(command) {
+                    const name = command.name; 
+                    const totalTime = command.steps.reduce((acc, step, i) => acc + step.time);
+
+                    command.steps.forEach(function(step) {
+                        let time = step.time;
+                        let style = { 'background-color' : '#' + step.color };                     
+                        let width = Math.min((step.time / totalTime) * 100); 
+                    });
+                    
+                    return (
+                        <div key={command.name} style={{"border":"1px solid blue"}} onClick={()=>{test(command.name)}}>
+                            <h1>{command.name}</h1>
+                        </div>
+                    );    
+                })}
             </div>
         </div>
         <Footer />
