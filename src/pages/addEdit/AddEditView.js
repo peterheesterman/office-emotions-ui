@@ -18,17 +18,29 @@ export const AddEditView = (props) => (
 
                 {props.commands.map(function(command) {
                     const name = command.name; 
-                    const totalTime = command.steps.reduce((acc, step, i) => acc + step.time);
+                    const totalTime = command.steps.reduce(function(acc, step, i) { return acc + step.time; }, 0);
+                    
+                    console.log(totalTime);
 
-                    command.steps.forEach(function(step) {
+                    let segments = command.steps.map(function(step) {
+                        console.log(step);
                         let time = step.time;
-                        let style = { 'background-color' : '#' + step.color };                     
                         let width = Math.min((step.time / totalTime) * 100); 
+
+                        let style = { 
+                            'backgroundColor' : '#' + step.color,
+                            'width' : width + '%'
+                        };                     
+
+                        return (
+                            <div className="AddEdit-segment" style={style} />
+                        );
                     });
                     
                     return (
-                        <div key={command.name} style={{"border":"1px solid blue"}} onClick={()=>{test(command.name)}}>
-                            <h1>{command.name}</h1>
+                        <div className="AddEdit-command" key={command.name} style={{"border":"1px solid blue"}} onClick={()=>{test(command.name)}}>
+                            <h1 className="AddEdit-title">{command.name}</h1>
+                            {segments}
                         </div>
                     );    
                 })}
