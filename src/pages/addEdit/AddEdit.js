@@ -15,7 +15,7 @@ class AddEdit extends Component {
     };
   }
   componentDidMount() {
-    fetch('http://localhost:3000/data').then(function (resp) {
+    fetch('http://192.168.88.54:3000/data').then(function (resp) {
       return resp.json();
     }).then(function (json) {
       console.log(json);
